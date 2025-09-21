@@ -3,8 +3,9 @@ package sphis.behindYou;
 class Scene
 {
 	public var id:String;
-
 	public var chance_of_character_entering:Float;
+
+	public var updateEvents:Array<Float->Void> = [];
 
 	public function new(id:String, ?chance_of_character_entering:Float = 50)
 	{
@@ -17,5 +18,9 @@ class Scene
 		return new Scene(this.id, this.chance_of_character_entering);
 	}
 
-	public function update(elapsed:Float) {}
+	public function update(elapsed:Float)
+	{
+		for (event in updateEvents)
+			event(elapsed);
+	}
 }
