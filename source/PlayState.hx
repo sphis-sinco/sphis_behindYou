@@ -24,6 +24,14 @@ class PlayState extends FlxState
 			{
 				var chance = scene.clone().chance_of_character_entering;
 
+				switch (currentCharacterScene.id)
+				{
+					case 'backroom':
+						chance = 0;
+					default:
+						trace(currentCharacterScene.id);
+				}
+
 				scene.chance_of_character_entering = chance;
 			});
 	}
