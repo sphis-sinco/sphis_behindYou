@@ -33,6 +33,7 @@ class PlayState extends FlxState
 		super();
 
 		setScene('room');
+		currentCharacterScene = getScene('backroom');
 	}
 
 	override public function create()
