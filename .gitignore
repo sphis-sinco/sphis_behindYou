@@ -1,0 +1,6 @@
+export/
+.haxelib/
+dump/
+
+.DS_Store
+RECOVER_**
