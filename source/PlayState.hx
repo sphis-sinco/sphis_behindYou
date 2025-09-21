@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxG;
 import flixel.FlxState;
 import sphis.behindYou.Scene;
 
@@ -53,5 +54,20 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		currentScene.update(elapsed);
+
+		var scenesToCheck = [];
+		for (key => value in sceneList)
+		{
+			if (currentScene.id != value.id)
+				scenesToCheck.push(value);
+		}
+
+		for (scene in scenesToCheck)
+		{
+			if (FlxG.random.bool(scene.chance_of_character_entering) && currentCharacterScene.id != scene.id)
+				currentCharacterScene = getScene(scene.id);
+			else
+				trace(scene.id + ' failed to get character');
+		}
 	}
 }
