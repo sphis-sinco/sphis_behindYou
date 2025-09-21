@@ -8,9 +8,14 @@ class PlayState extends FlxState
 	public var sceneList:Map<String, Scene> = ['room' => new Scene('room')];
 	public var currentScene:Scene;
 
+	public function getScene(id:String):Scene
+	{
+		return sceneList?.get(id).clone() ?? new Scene('null', 0);
+	}
+
 	public function setScene(id:String)
 	{
-		this.currentScene = sceneList?.get(id).clone() ?? new Scene('null', 0);
+		this.currentScene = getScene(id);
 
 		if (id == 'room')
 			currentScene.updateEvents.push((elapsed, scene) ->
