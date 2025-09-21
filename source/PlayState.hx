@@ -10,7 +10,7 @@ class PlayState extends FlxState
 
 	public function setScene(id:String)
 	{
-		this.currentScene = sceneList?.get(id) ?? new Scene('null');
+		this.currentScene = sceneList?.get(id).clone() ?? new Scene('null', 0);
 	}
 
 	public function new()
@@ -28,5 +28,6 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		currentScene.update(elapsed);
 	}
 }
