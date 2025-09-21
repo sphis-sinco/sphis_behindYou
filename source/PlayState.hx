@@ -28,7 +28,7 @@ class PlayState extends FlxState
 				switch (currentCharacterScene.id)
 				{
 					case 'backroom':
-						chance = 1;
+						chance = 15;
 					default:
 						trace(currentCharacterScene.id);
 				}
