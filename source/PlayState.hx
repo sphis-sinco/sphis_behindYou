@@ -65,9 +65,10 @@ class PlayState extends FlxState
 		for (scene in scenesToCheck)
 		{
 			if (FlxG.random.bool(scene.chance_of_character_entering) && currentCharacterScene.id != scene.id)
+			{
+				trace(scene.id + ' got char');
 				currentCharacterScene = getScene(scene.id);
-			else
-				trace(scene.id + ' failed to get character');
+			}
 		}
 	}
 }
