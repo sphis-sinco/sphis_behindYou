@@ -8,4 +8,8 @@ class Scene
 	{
 		this.id = id;
 	}
+	public function clone()
+	{
+		return new Scene(this.id);
+	}
 }
