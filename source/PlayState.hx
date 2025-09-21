@@ -11,6 +11,9 @@ class PlayState extends FlxState
 	public function setScene(id:String)
 	{
 		this.currentScene = sceneList?.get(id).clone() ?? new Scene('null', 0);
+
+		if (id == 'room')
+			currentScene.updateEvents.push((elapsed, scene) -> {});
 	}
 
 	public function new()

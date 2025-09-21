@@ -5,7 +5,7 @@ class Scene
 	public var id:String;
 	public var chance_of_character_entering:Float;
 
-	public var updateEvents:Array<Float->Void> = [];
+	public var updateEvents:Array<(Float, Scene) -> Void> = [];
 
 	public function new(id:String, ?chance_of_character_entering:Float = 50)
 	{
@@ -21,6 +21,6 @@ class Scene
 	public function update(elapsed:Float)
 	{
 		for (event in updateEvents)
-			event(elapsed);
+			event(elapsed, this);
 	}
 }
