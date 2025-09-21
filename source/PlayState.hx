@@ -6,11 +6,11 @@ import sphis.behindYou.Scene;
 class PlayState extends FlxState
 {
 	public var sceneList:Map<String, Scene> = ['room' => new Scene('room')];
-	public var scene:Scene;
+	public var currentScene:Scene;
 
 	public function setScene(id:String)
 	{
-		this.scene = sceneList?.get(id) ?? new Scene('null');
+		this.currentScene = sceneList?.get(id) ?? new Scene('null');
 	}
 
 	public function new()
