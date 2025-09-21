@@ -5,7 +5,7 @@ import sphis.behindYou.Scene;
 
 class PlayState extends FlxState
 {
-	public var sceneList:Map<String, Scene> = ['room' => new Scene('room')];
+	public var sceneList:Map<String, Scene> = ['room' => new Scene('room'), 'backroom' => new Scene('backroom')];
 
 	public var currentScene:Scene;
 	public var currentCharacterScene:Scene;
