@@ -5,7 +5,7 @@ import sphis.behindYou.Scene;
 
 class PlayState extends FlxState
 {
-	public var scene:Scene;
+	public var scene:Scene = new Scene('room');
 
 	override public function create()
 	{
