@@ -13,4 +13,6 @@ class Scene
 	{
 		return new Scene(this.id);
 	}
+
+	public function update(elapsed:Float) {}
 }
