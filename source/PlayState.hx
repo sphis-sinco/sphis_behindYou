@@ -13,7 +13,12 @@ class PlayState extends FlxState
 		this.currentScene = sceneList?.get(id).clone() ?? new Scene('null', 0);
 
 		if (id == 'room')
-			currentScene.updateEvents.push((elapsed, scene) -> {});
+			currentScene.updateEvents.push((elapsed, scene) ->
+			{
+				var chance = scene.clone().chance_of_character_entering;
+
+				scene.chance_of_character_entering = chance;
+			});
 	}
 
 	public function new()
