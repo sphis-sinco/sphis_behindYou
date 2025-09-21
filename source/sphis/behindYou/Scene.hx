@@ -8,7 +8,7 @@ class Scene
 	{
 		this.id = id;
 	}
-	public function clone()
+	public function clone():Scene
 	{
 		return new Scene(this.id);
 	}
